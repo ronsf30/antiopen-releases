@@ -10,10 +10,11 @@ Abre una carpeta, pídele algo y mira lo que hace: qué archivos lee, qué cambi
 
 [![Última versión](https://img.shields.io/github/v/release/ronsf30/antiopen-releases?label=versi%C3%B3n&color=8b7bff)](https://github.com/ronsf30/antiopen-releases/releases/latest)
 ![Windows 10 y 11](https://img.shields.io/badge/Windows-10%20%7C%2011-5b4ce0)
+![macOS](https://img.shields.io/badge/macOS-Apple%20silicon%20e%20Intel-5b4ce0)
 ![Motor OpenCode 2](https://img.shields.io/badge/motor-OpenCode%202-15171c)
 ![Interfaz en español](https://img.shields.io/badge/interfaz-espa%C3%B1ol-3ecf8e)
 
-### [Descargar AntiOpen para Windows](https://github.com/ronsf30/antiopen-releases/releases/latest)
+### [Descargar AntiOpen para Windows y Mac](https://github.com/ronsf30/antiopen-releases/releases/latest)
 
 </div>
 
@@ -51,7 +52,7 @@ No reemplaza a OpenCode: lo usa por debajo. Tus sesiones, tu clave y tu configur
 - Sesiones por carpeta, con búsqueda, **grupos** y nombres editables.
 - **Exportar e importar sesiones** con todo su historial, para pasarlas a otro PC.
 - Registro de errores explicado en palabras claras, listo para copiar, con las claves ocultas.
-- Avisos de Windows cuando termina una tarea o necesita tu respuesta.
+- Avisos del sistema cuando termina una tarea o necesita tu respuesta.
 - Tema claro, oscuro o el del sistema.
 
 <table>
@@ -67,18 +68,30 @@ No reemplaza a OpenCode: lo usa por debajo. Tus sesiones, tu clave y tu configur
 
 ## Instalar
 
+### Windows
+
 1. Descarga `AntiOpen-Setup-x.y.z.exe` desde la [última versión](https://github.com/ronsf30/antiopen-releases/releases/latest) y ábrelo.
 2. Si Windows muestra **"Windows protegió su PC"**, pulsa **Más información → Ejecutar de todas formas**. Aparece porque el instalador no está firmado con un certificado de pago; no es un virus.
-3. Abre AntiOpen:
-   - Si el PC no tiene OpenCode, pulsa **Instalar OpenCode** y la app se encarga (Node.js incluido si hace falta). Si prefieres la terminal: `npm.cmd install -g @opencode/cli`.
-   - Pega tu clave de OpenCode Go cuando te la pida. En la [consola de OpenCode](https://opencode.ai/console), pon la región en **Global** (pestaña Go → *Manage privacy*).
-4. Pulsa **Abrir carpeta**, elige tu proyecto y empieza.
+3. Abre AntiOpen y sigue los pasos de [Primer arranque](#primer-arranque).
 
-**Necesitas:** Windows 10 u 11 de 64 bits y un plan de [OpenCode Go](https://opencode.ai) (o cualquier otro proveedor que tengas configurado en OpenCode). Para ver los cambios y deshacerlos, la carpeta necesita git; si no lo tiene, la app ofrece activarlo.
+### Mac
+
+1. Descarga `AntiOpen-x.y.z-mac.dmg` desde la [última versión](https://github.com/ronsf30/antiopen-releases/releases/latest) (sirve para Apple silicon e Intel), ábrelo y arrastra AntiOpen a **Aplicaciones**.
+2. Como la app no está firmada con un certificado de Apple, macOS dirá que no puede verificarla. Ve a **Ajustes del Sistema → Privacidad y seguridad** y pulsa **Abrir igualmente** (aparece justo después de intentar abrirla). En macOS anteriores a Sequoia basta con clic derecho sobre la app → **Abrir**.
+3. Abre AntiOpen y sigue los pasos de [Primer arranque](#primer-arranque). Si falta Node.js, la app te dice cómo instalarlo (nodejs.org o `brew install node`).
+
+### Primer arranque
+
+1. Si el equipo no tiene OpenCode, pulsa **Instalar OpenCode** y la app se encarga (en Windows, Node.js incluido si hace falta). Si prefieres la terminal: `npm install -g --allow-scripts=@opencode/cli @opencode/cli` (en Windows, `npm.cmd`). El `--allow-scripts` hace falta con npm 12 o posterior. No uses el paquete `opencode-ai`: es la versión 1 y no funciona con AntiOpen.
+2. Pega tu clave de OpenCode Go cuando te la pida. En la [consola de OpenCode](https://opencode.ai/console), pon la región en **Global** (pestaña Go → *Manage privacy*).
+3. Pulsa **Abrir carpeta**, elige tu proyecto y empieza.
+
+**Necesitas:** Windows 10 u 11 de 64 bits, o un Mac con macOS (Apple silicon o Intel), y un plan de [OpenCode Go](https://opencode.ai) (o cualquier otro proveedor que tengas configurado en OpenCode). Para ver los cambios y deshacerlos, la carpeta necesita git; si no lo tiene, la app ofrece activarlo.
 
 ## Actualizaciones
 
-- **AntiOpen se actualiza solo.** Busca versiones nuevas al abrirse y cada pocas horas, las descarga en segundo plano y te muestra **Reiniciar para actualizar**.
+- **En Windows, AntiOpen se actualiza solo.** Busca versiones nuevas al abrirse y cada pocas horas, las descarga en segundo plano y te muestra **Reiniciar para actualizar**.
+- **En Mac te avisa, pero no se actualiza solo** (la app no está firmada): cuando hay una versión nueva aparece un aviso en la barra lateral con un botón **Descargar**; instalas el nuevo `.dmg` encima.
 - **OpenCode se actualiza desde la app** (Ajustes → OpenCode). Antes de terminar comprueba que la versión nueva funciona, y si algo falla vuelve sola a la anterior.
 
 ## Privacidad y seguridad
